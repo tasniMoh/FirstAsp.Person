@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Api.IRepository
+namespace FirstAspPerson.IRepository
 {
     public interface IGenericRepository<T> where T : class
     {

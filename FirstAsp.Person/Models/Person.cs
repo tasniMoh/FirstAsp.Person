@@ -1,8 +1,9 @@
 ﻿using static System.Net.Mime.MediaTypeNames;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using System.ComponentModel.DataAnnotations;
 
-namespace FirstAsp.Person.Models
+namespace FirstAspPerson.Models
 {
     public class Person
     {

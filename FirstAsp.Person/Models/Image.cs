@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FirstAspPerson.Models;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FirstAsp.Person.Models
+namespace FirstAspPerson.Models
 {
     public class Image
     {
@@ -10,7 +11,7 @@ namespace FirstAsp.Person.Models
         public string File { get; set; }
 
 
-        [ForeignKey(nameof(Person))]
+        //[ForeignKey(nameof(Person))]
         public int PersonId { get; set; }
 
         //it can be virtual

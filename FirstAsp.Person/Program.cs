@@ -1,6 +1,6 @@
+using FirstASpPerson.Data;
 using Microsoft.EntityFrameworkCore;
-using Persons;
-using Persons.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,9 +1,10 @@
-﻿using FirstAsp.Person.Models;
+﻿
+using FirstAspPerson.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 
 
-namespace Persons.Data
+namespace FirstASpPerson.Data
 {
     public class PersonsDBContext : DbContext
     {
@@ -12,7 +13,9 @@ namespace Persons.Data
 
         }
 
-       
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Image> Images { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,7 +30,7 @@ namespace Persons.Data
 
             modelBuilder.Entity<Image>()
                 .HasOne(i => i.Person)
-                .WithMany(p => p.Images)
+                .WithMany(p =>p.Images)
                 .HasForeignKey(i => i.PersonId);
 
 
@@ -52,8 +55,7 @@ namespace Persons.Data
 
         }
 
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Image> Images { get; set; }
+       
 
     }
 }

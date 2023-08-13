@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace FirstAsp.Person.Migrations
+namespace FirstAspPerson.Migrations
 {
     /// <inheritdoc />
     public partial class Init : Migration

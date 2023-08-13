@@ -1,9 +1,9 @@
-﻿using Api.IRepository;
-using FirstAsp.Person.Models;
+﻿using FirstAspPerson.IRepository;
+using FirstAspPerson.Models;
 using System.Diagnostics.Metrics;
-using Persons.Data;
 
-namespace FirstAsp.Person.IRepository
+
+namespace FirstAspPerson.IRepository
 {
     public interface IUnitOfWork:IDisposable
     {

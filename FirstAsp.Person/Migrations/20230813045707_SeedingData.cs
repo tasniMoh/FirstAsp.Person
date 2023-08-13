@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace FirstAsp.Person.Migrations
+namespace FirstAspPerson.Migrations
 {
     /// <inheritdoc />
     public partial class SeedingData : Migration

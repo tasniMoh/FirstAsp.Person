@@ -1,9 +1,9 @@
-﻿using Api.IRepository;
+﻿using FirstAspPerson.IRepository;
+using FirstASpPerson.Data;
 using Microsoft.EntityFrameworkCore;
-using Persons.Data;
 using System.Linq.Expressions;
 
-namespace FirstAsp.Person.Repository
+namespace FirstAspPerson.Repository
 {
     public class Generic_Repository<T> : IGenericRepository<T> where T : class
     {

@@ -1,10 +1,9 @@
-﻿using Api.IRepository;
-using FirstAsp.Person.IRepository;
-using FirstAsp.Person.Models;
-using Persons.Data;
+﻿using FirstAspPerson.IRepository;
+using FirstAspPerson.Models;
+using FirstASpPerson.Data;
 using System.Diagnostics.Metrics;
 
-namespace FirstAsp.Person.Repository
+namespace FirstAspPerson.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -17,9 +16,10 @@ namespace FirstAsp.Person.Repository
             _context = context;
         }
 
-        public IGenericRepository<Image> Images=>_images ??=new Generic_Repository<Image>(_context)
+        public IGenericRepository<Image> Images => _images ??= new Generic_Repository<Image>(_context);
 
-        public IGenericRepository<Person> _persons => new Generic_Repository<Person>(_context);
+        public IGenericRepository<Person> Persons=> _persons ??= new Generic_Repository<Person>(_context);
+
 
         public void Dispose()
         {
