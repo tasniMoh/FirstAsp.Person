@@ -1,3 +1,6 @@
+using FirstAspPerson.Configurations;
+using FirstAspPerson.IRepository;
+using FirstAspPerson.Repository;
 using FirstASpPerson.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,12 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(op =>
+op.SerializerSettings.ReferenceLoopHandling =
+Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 //builder.Services.AddTransient<Seed>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddAutoMapper(typeof(MapperInitializer));
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PersonsDBContext>(options =>
 

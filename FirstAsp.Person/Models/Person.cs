@@ -13,6 +13,7 @@ namespace FirstAspPerson.Models
         public string Name { get; set; }
         public string LastName { get; set; }
 
-        public ICollection<Image> Images { get; set; }
+        //public ICollection<Image> Images { get; set; }
+        public virtual IList<Image> Images { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace FirstAspPerson.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("FirstAsp.Person.Models.Image", b =>
+            modelBuilder.Entity("FirstAspPerson.Models.Image", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace FirstAspPerson.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("FirstAsp.Person.Models.Person", b =>
+            modelBuilder.Entity("FirstAspPerson.Models.Person", b =>
                 {
                     b.Property<int>("NationalCode")
                         .ValueGeneratedOnAdd()
@@ -86,9 +86,9 @@ namespace FirstAspPerson.Migrations
                         });
                 });
 
-            modelBuilder.Entity("FirstAsp.Person.Models.Image", b =>
+            modelBuilder.Entity("FirstAspPerson.Models.Image", b =>
                 {
-                    b.HasOne("FirstAsp.Person.Models.Person", "Person")
+                    b.HasOne("FirstAspPerson.Models.Person", "Person")
                         .WithMany("Images")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -97,7 +97,7 @@ namespace FirstAspPerson.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("FirstAsp.Person.Models.Person", b =>
+            modelBuilder.Entity("FirstAspPerson.Models.Person", b =>
                 {
                     b.Navigation("Images");
                 });

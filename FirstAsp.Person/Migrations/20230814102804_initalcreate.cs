@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace FirstAspPerson.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class initalcreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -43,6 +45,15 @@ namespace FirstAspPerson.Migrations
                         principalTable: "Persons",
                         principalColumn: "NationalCode",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Persons",
+                columns: new[] { "NationalCode", "LastName", "Name" },
+                values: new object[,]
+                {
+                    { 123456789, "Sadeqi", "Reza" },
+                    { 987654321, "Smith", "Moana" }
                 });
 
             migrationBuilder.CreateIndex(
